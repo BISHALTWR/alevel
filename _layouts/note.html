@@ -116,7 +116,7 @@ layout: default
 async function generatePDF(name) {
   // Construct the PDF path based on the current page's URL
   const subject = window.location.pathname.split('/')[2];
-  const pdfPath = `/_notes/${subject}/pdf/${name}.pdf`;
+  const pdfPath = `{{ site.baseurl }}/_notes/${subject}/pdf/${name}.pdf`;
   console.log(pdfPath);
   try {
     // Check if the PDF file exists
