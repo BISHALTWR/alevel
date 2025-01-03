@@ -2,6 +2,7 @@ title: A Level Notes
 description: Your A Level study companion
 
 permalink: pretty
+baseurl: "/alevel"
 
 markdown: kramdown
 kramdown:
