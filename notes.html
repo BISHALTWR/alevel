@@ -42,8 +42,8 @@ permalink: /notes/
     {% for subject in subjects_list %}
     {% assign subject_slug = subject.title | slugify %}
     
-    {% assign banner_image_jpg = "/assets/img/subjects/" | append: subject.subject | append: "_banner.jpg" %}
-    {% assign icon_image_svg = "/assets/img/subjects/" | append: subject.subject | append: "_icon.svg" %}
+    {% assign banner_image_jpg = site.baseurl | append: "/assets/img/subjects/" | append: subject.subject | append: "_banner.jpg" %}
+    {% assign icon_image_svg = sie.baseurl | append: "/assets/img/subjects/" | append: subject.subject | append: "_icon.svg" %}
     
     {% assign banner_exists = false %}
     {% assign icon_exists = false %}
@@ -57,7 +57,7 @@ permalink: /notes/
       {% endif %}
     {% endfor %}
     <a
-      href="/notes/{{ subject_slug | replace: '-', '_' }}"
+      href="{{ site.baseurl }}/notes/{{ subject_slug | replace: '-', '_' }}"
       class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
     >
       <div
@@ -127,7 +127,7 @@ permalink: /notes/
         </p>
       </div>
       <a
-        href="/study-guide"
+        href="{{ site.baseurl }}/study-guide"
         class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-colors shadow-lg hover:shadow-xl"
       >
         View Study Guide
