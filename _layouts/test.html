@@ -51,7 +51,7 @@ layout: default
         {% if collection.size > 0 %}
         <div class="space-y-1">
           {% for chapter in collection %}
-          <a href="{{ site.baseurl | append: chapter.url | replace: '//', '/' }}"
+          <a href="{{ site.baseurl}}{{chapter.url}}"
             class="flex items-center px-4 py-2 text-sm rounded-lg group
             {% if page.url == chapter.url %}
             text-blue-600 dark:text-blue-400 bg-[#fdf6e3] dark:bg-blue-900/30 font-medium
