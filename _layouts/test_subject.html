@@ -46,7 +46,7 @@ layout: default
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% if collection.size > 0 %}
                 {% for test in collection %}
-                    <a href="{{ site.baseurl }}/{{ test.url }}" class="group block">
+                    <a href="{{ site.baseurl }}{{ test.url }}" class="group block">
                         <div class="h-full p-6 bg-[#fdf6e3] dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="flex items-center justify-between">
                                 <div class="flex-1">
