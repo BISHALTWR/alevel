@@ -42,8 +42,8 @@ permalink: /notes/
     {% for subject in subjects_list %}
     {% assign subject_slug = subject.title | slugify %}
     
-    {% assign banner_image_jpg = site.baseurl | append: "/assets/img/subjects/" | append: subject.subject | append: "_banner.jpg" %}
-    {% assign icon_image_svg = sie.baseurl | append: "/assets/img/subjects/" | append: subject.subject | append: "_icon.svg" %}
+    {% assign banner_image_jpg = "/assets/img/subjects/" | append: subject.subject | append: "_banner.jpg" %}
+    {% assign icon_image_svg = "/assets/img/subjects/" | append: subject.subject | append: "_icon.svg" %}
     
     {% assign banner_exists = false %}
     {% assign icon_exists = false %}
