@@ -23,14 +23,14 @@ layout: default
     {% endfor %}
         
         {% if banner_exists %}
-            <img src="{{ banner_image_jpg }}" alt="{{ subject | capitalize }} Banner" class="w-full h-48 object-cover rounded-lg shadow-lg mb-4">
+            <img src="{{ site.baseurl }}/{{ banner_image_jpg }}" alt="{{ subject | capitalize }} Banner" class="w-full h-48 object-cover rounded-lg shadow-lg mb-4">
         {% else %}
-            <img src="/assets/img/subjects/default_banner.jpg" alt="Default Banner" class="w-full h-48 object-cover rounded-lg shadow-lg mb-4">
+            <img src="{{ site.baseurl }}/assets/img/subjects/default_banner.jpg" alt="Default Banner" class="w-full h-48 object-cover rounded-lg shadow-lg mb-4">
         {% endif %}
         
         <div class="flex items-center gap-4 mb-6">
             {% if icon_exists %}
-                <img src="{{ icon_image_svg }}" alt="{{ subject | capitalize }} Icon" class="w-12 h-12">
+                <img src="{{site.baseurl }}/{{ icon_image_svg }}" alt="{{ subject | capitalize }} Icon" class="w-12 h-12">
             {% else %}
                 <img src="/assets/img/subjects/default_icon.svg" alt="Default Icon" class="w-12 h-12">
             {% endif %}
@@ -46,7 +46,7 @@ layout: default
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% if collection.size > 0 %}
                 {% for chapter in collection %}
-                    <a href="{{ chapter.url }}" class="group block">
+                    <a href="{{ site.baseurl }}{{ chapter.url }}" class="group block">
                         <div class="h-full p-6 bg-[#fdf6e3] dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="flex items-center justify-between">
                                 <div class="flex-1">

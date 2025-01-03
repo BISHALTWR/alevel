@@ -12,7 +12,7 @@ layout: default
                 {% assign subject = page.subject %}
                 {% assign collection = collection | where: "subject", subject %}
                 {% for chapter in collection %}
-      <option value="{{ chapter.url }}" {% if page.url == chapter.url %}selected{% endif %}>
+      <option value="{{ site.baseurl }}/{{ chapter.url }}" {% if page.url == chapter.url %}selected{% endif %}>
         {{ chapter.title }}
       </option>
       {% endfor %}
@@ -51,7 +51,7 @@ layout: default
         {% if collection.size > 0 %}
         <div class="space-y-1">
           {% for chapter in collection %}
-          <a href="{{ chapter.url }}"
+          <a href="{{ site.baseurl }}/{{ chapter.url }}"
             class="flex items-center px-4 py-2 text-sm rounded-lg group
             {% if page.url == chapter.url %}
             text-blue-600 dark:text-blue-400 bg-[#fdf6e3] dark:bg-blue-900/30 font-medium
@@ -114,7 +114,7 @@ layout: default
 async function generatePDF(name) {
   // Construct the PDF path based on the current page's URL
   const subject = window.location.pathname.split('/')[2];
-  const pdfPath = `/_tests/${subject}/pdf/${name}.pdf`;
+  const pdfPath = `{{ site.baseurl }}/_tests/${subject}/pdf/${name}.pdf`;
   console.log(pdfPath);
   try {
     // Check if the PDF file exists
