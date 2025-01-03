@@ -207,7 +207,7 @@ c17 37 57 94 87 128 30 34 55 66 55 71 0 5 -17 12 -37 15 -198 30 -278 59
       {% endif %}
     {% endfor %}
     <a
-      href="/tests/{{ subject_slug | replace: '-', '_'}}"
+      href="{{ site.baseurl }}//tests/{{ subject_slug | replace: '-', '_'}}"
       class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
     >
       <div
@@ -217,13 +217,13 @@ c17 37 57 94 87 128 30 34 55 66 55 71 0 5 -17 12 -37 15 -198 30 -278 59
         <div class="absolute inset-0">
           {% if banner_exists %}
           <img
-            src="{{ banner_image_jpg }}"
+            src="{{ site.baseurl }}/{{ banner_image_jpg }}"
             alt="{{ subject.title }} banner"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />          
           {% else %}
           <img
-            src="/assets/img/subjects/default_banner.jpg"
+            src="{{ site.baseurl }}//assets/img/subjects/default_banner.jpg"
             alt="Default banner"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
@@ -240,13 +240,13 @@ c17 37 57 94 87 128 30 34 55 66 55 71 0 5 -17 12 -37 15 -198 30 -278 59
             <div class="bg-white dark:bg-white rounded-xl p-2 shadow-lg">
               {% if icon_exists %}
               <img
-                src="{{ icon_image_svg }}"
+                src="{{ site.baseurl }}/{{ icon_image_svg }}"
                 alt="{{ folder }} icon"
                 class="w-10 h-10"
               />
               {% else %}
               <img
-                src="/assets/img/subjects/default_icon.svg"
+                src="{{ site.baseurl }}//assets/img/subjects/default_icon.svg"
                 alt="Default icon"
                 class="w-10 h-10"
               />

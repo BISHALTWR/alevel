@@ -67,13 +67,13 @@ permalink: /notes/
         <div class="absolute inset-0">
           {% if banner_exists %}
           <img
-            src="{{ banner_image_jpg }}"
+            src="{{ site.baseurl }}/{{ banner_image_jpg }}"
             alt="{{ subject.title }} banner"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
           {% else %}
           <img
-            src="/assets/img/subjects/default_banner.jpg"
+            src="{{ site.baseurl }}/assets/img/subjects/default_banner.jpg"
             alt="Default banner"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
@@ -90,13 +90,13 @@ permalink: /notes/
             <div class="bg-white dark:bg-white rounded-xl p-2 shadow-lg">
               {% if icon_exists %}
               <img
-                src="{{ icon_image_svg }}"
+                src="{{ site.baseurl }}/{{ icon_image_svg }}"
                 alt="{{ subject.title }} icon"
                 class="w-10 h-10"
               />
               {% else %}
               <img
-                src="/assets/img/subjects/default_icon.svg"
+                src="{{ site.baseurl }}//assets/img/subjects/default_icon.svg"
                 alt="Default icon"
                 class="w-10 h-10"
               />
