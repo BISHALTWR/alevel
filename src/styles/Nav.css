@@ -1,0 +1,6 @@
+/* Ensure the nav items are correctly positioned and styled */
+nav {
+  border-radius: 100px;
+  min-width: 175px;
+  min-height: 275px;
+}

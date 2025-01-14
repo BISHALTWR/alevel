@@ -1,0 +1,126 @@
+nav {
+  border-radius: 100px;
+  min-width: 175px;
+  min-height: 275px;
+}
+
+.nav-btn {
+  opacity: 0;
+}
+
+@keyframes moveNotes {
+  from {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+  }
+  to {
+    left: calc(16px + 4rem);
+    top: calc(50% - 8rem);
+    opacity: 1;
+  }
+}
+
+@keyframes moveTests {
+  from {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+  }
+  to {
+    left: calc(16px + 4rem);
+    top: calc(50% + 8rem);
+    opacity: 1;
+  }
+}
+
+@keyframes moveContact {
+  from {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+  }
+  to {
+    left: calc(16px + 8.4rem);
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+nav:hover #notesBtn {
+  animation: moveNotes 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+nav:hover #testsBtn {
+  animation: moveTests 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+nav:hover #contactBtn {
+  animation: moveContact 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+[data-leaving="true"] {
+  animation: moveBack 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Add these keyframe animations after your existing animations */
+@keyframes moveNotesBack {
+  from {
+    left: calc(16px + 4rem);
+    top: calc(50% - 8rem);
+    opacity: 1;
+  }
+  to {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveTestsBack {
+  from {
+    left: calc(16px + 4rem);
+    top: calc(50% + 8rem);
+    opacity: 1;
+  }
+  to {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveContactBack {
+  from {
+    left: calc(16px + 8.4rem);
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    left: 0;
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+/* Add these data-leaving styles after your hover styles */
+#notesBtn[data-leaving="true"] {
+  animation: moveNotesBack 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+#testsBtn[data-leaving="true"] {
+  animation: moveTestsBack 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+#contactBtn[data-leaving="true"] {
+  animation: moveContactBack 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Add this to ensure buttons are initially positioned correctly */
+.nav-btn {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  opacity: 0;
+  transform: translateY(-50%);
+}

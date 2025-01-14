@@ -1,0 +1,131 @@
+{
+  "computer": {
+    "subject": "Computer Science",
+    "notes": [
+      {
+        "id": "info-representation",
+        "title": "1. Information Representation & Multimedia",
+        "pdfUrl": "/alevel/notes/computer/1. Information representation and multimedia.pdf",
+        "description": "Data types, number systems, text, sound and images",
+        "component": "AS"
+      },
+      {
+        "id": "networking",
+        "title": "2. Communication & Networking",
+        "pdfUrl": "/alevel/notes/computer/2. Communication and networking technologies.pdf",
+        "description": "Networks, protocols and communication methods",
+        "component": "AS"
+      },
+      {
+        "id": "hardware",
+        "title": "3. Hardware",
+        "pdfUrl": "/alevel/notes/computer/3. Hardware.pdf",
+        "description": "Computer architecture and hardware components",
+        "component": "AS"
+      },
+      {
+        "id": "logic-gates",
+        "title": "4. Logic Gates & Circuits",
+        "pdfUrl": "/alevel/notes/computer/4. Logic gates and logic circuits.pdf",
+        "description": "Digital logic, Boolean algebra and circuit design",
+        "component": "AS"
+      },
+      {
+        "id": "processor",
+        "title": "5. Processor Fundamentals",
+        "pdfUrl": "/alevel/notes/computer/5. Processor fundamentals.pdf",
+        "description": "CPU architecture, fetch-execute cycle and performance",
+        "component": "AS"
+      },
+      {
+        "id": "assembly",
+        "title": "6. Assembly Language",
+        "pdfUrl": "/alevel/notes/computer/6. Assembly language programming.pdf",
+        "description": "Low-level programming and instruction sets",
+        "component": "AS"
+      },
+      {
+        "id": "monitoring",
+        "title": "7. Monitoring & Control Systems",
+        "pdfUrl": "/alevel/notes/computer/7. Monitoring and control systems.pdf",
+        "description": "Real-time systems and process control",
+        "component": "AS"
+      },
+      {
+        "id": "system-software",
+        "title": "8. System Software",
+        "pdfUrl": "/alevel/notes/computer/8. System software.pdf",
+        "description": "Operating systems, utilities and language translation",
+        "component": "AS"
+      },
+      {
+        "id": "security",
+        "title": "9. Security & Privacy",
+        "pdfUrl": "/alevel/notes/computer/9. Security, privacy and data integrity.pdf",
+        "description": "Data protection, encryption and security measures",
+        "component": "AS"
+      },
+      {
+        "id": "ethics",
+        "title": "10. Ethics & Ownership",
+        "pdfUrl": "/alevel/notes/computer/10. Ethics and ownership.pdf",
+        "description": "Legal, social and ethical issues in computing",
+        "component": "AS"
+      },
+      {
+        "id": "paper2-theory",
+        "title": "Paper 2 Theory Notes",
+        "pdfUrl": "/alevel/notes/computer/Paper 2 theory.pdf",
+        "description": "Complete theory notes for Paper 2",
+        "component": "AS"
+      },
+      {
+        "id": "paper3-notes",
+        "title": "Paper 3 Notes",
+        "pdfUrl": "/alevel/notes/computer/Paper 3 note.pdf",
+        "description": "Complete notes for Paper 3",
+        "component": "A2"
+      }
+    ]
+  },
+  "business": {
+    "subject": "Business Studies",
+    "notes": [
+      {
+        "id": "business-environment",
+        "title": "1. Business and its Environment",
+        "pdfUrl": "/alevel/notes/business/1. Business and its environment.pdf",
+        "description": "Understanding the business environment and its impact",
+        "component": "AS"
+      },
+      {
+        "id": "human-resource",
+        "title": "2. Human Resource Management",
+        "pdfUrl": "/alevel/notes/business/2. Human resource management.pdf",
+        "description": "Managing people within organizations",
+        "component": "AS"
+      },
+      {
+        "id": "marketing",
+        "title": "3. Marketing",
+        "pdfUrl": "/alevel/notes/business/3. Marketing.pdf",
+        "description": "Strategies and techniques for marketing",
+        "component": "AS"
+      },
+      {
+        "id": "operations-management",
+        "title": "4. Operations Management",
+        "pdfUrl": "/alevel/notes/business/4. Operations Management.pdf",
+        "description": "Managing production and operations",
+        "component": "AS"
+      },
+      {
+        "id": "finance-accounting",
+        "title": "5. Finance and Accounting",
+        "pdfUrl": "/alevel/notes/business/5. Finance and Accounting.pdf",
+        "description": "Financial management and accounting principles",
+        "component": "AS"
+      }
+    ]
+  }
+}
