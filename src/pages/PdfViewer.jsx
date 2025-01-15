@@ -33,18 +33,22 @@ function PdfViewer() {
 
   const toggleFullscreen = async () => {
     const pdfViewer = document.getElementById("pdf-viewer");
-    
+
     try {
       // Check if already fullscreen
-      if (!document.fullscreenElement && 
-          !document.webkitFullscreenElement && 
-          !document.mozFullScreenElement) {
+      if (
+        !document.fullscreenElement &&
+        !document.webkitFullscreenElement &&
+        !document.mozFullScreenElement
+      ) {
         // Request fullscreen with vendor prefixes
         if (pdfViewer.requestFullscreen) {
           await pdfViewer.requestFullscreen();
-        } else if (pdfViewer.webkitRequestFullscreen) { // iOS Safari
+        } else if (pdfViewer.webkitRequestFullscreen) {
+          // iOS Safari
           await pdfViewer.webkitRequestFullscreen();
-        } else if (pdfViewer.mozRequestFullScreen) { // Firefox
+        } else if (pdfViewer.mozRequestFullScreen) {
+          // Firefox
           await pdfViewer.mozRequestFullScreen();
         }
       } else {
@@ -58,27 +62,35 @@ function PdfViewer() {
         }
       }
     } catch (err) {
-      console.log('Fullscreen not supported:', err);
+      console.log("Fullscreen not supported:", err);
     }
   };
 
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(
-        !!(document.fullscreenElement || 
-           document.webkitFullscreenElement || 
-           document.mozFullScreenElement)
+        !!(
+          document.fullscreenElement ||
+          document.webkitFullscreenElement ||
+          document.mozFullScreenElement
+        ),
       );
     };
-  
+
     document.addEventListener("fullscreenchange", handleFullscreenChange);
     document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
     document.addEventListener("mozfullscreenchange", handleFullscreenChange);
-  
+
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
-      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
-      document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFullscreenChange,
+      );
+      document.removeEventListener(
+        "mozfullscreenchange",
+        handleFullscreenChange,
+      );
     };
   }, []);
 
@@ -87,39 +99,39 @@ function PdfViewer() {
       <div className="h-full flex flex-col">
         {/* Mobile Header */}
         <div className="md:hidden fixed top-0 left-0 right-0 z-50">
-        <div className="p-4 flex items-center justify-between">
-  <button
-    onClick={() => navigate(-1)}
-    className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
-  >
-    <HiOutlineChevronLeft className="w-5 h-5" />
-    <span>Back</span>
-  </button>
-  
-  {/* Fullscreen button for mobile */}
-<button
-  onClick={toggleFullscreen}
-  className="fixed top-32 right-6 p-2 rounded-lg bg-black/50 backdrop-blur-xl shadow-lg transition-all duration-200 text-white hover:bg-black/70 z-50"
->
-  {isFullscreen ? (
-    <HiArrowsPointingIn className="w-5 h-5" />
-  ) : (
-    <HiArrowsPointingOut className="w-5 h-5" />
-  )}
-</button>
+          <div className="p-4 flex items-center justify-between">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
+            >
+              <HiOutlineChevronLeft className="w-5 h-5" />
+              <span>Back</span>
+            </button>
 
-  <button
-    onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-    className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
-  >
-    <span className="font-medium">{subjectTitle}</span>
-    <HiChevronDown 
-      className={`w-5 h-5 transition-transform duration-300 ${
-        isMobileDropdownOpen ? 'rotate-180' : ''
-      }`}
-    />
-  </button>
-</div>
+            {/* Fullscreen button for mobile */}
+            <button
+              onClick={toggleFullscreen}
+              className="fixed top-32 right-6 p-2 rounded-lg bg-black/50 backdrop-blur-xl shadow-lg transition-all duration-200 text-white hover:bg-black/70 z-50"
+            >
+              {isFullscreen ? (
+                <HiArrowsPointingIn className="w-5 h-5" />
+              ) : (
+                <HiArrowsPointingOut className="w-5 h-5" />
+              )}
+            </button>
+
+            <button
+              onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+              className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
+            >
+              <span className="font-medium">{subjectTitle}</span>
+              <HiChevronDown
+                className={`w-5 h-5 transition-transform duration-300 ${
+                  isMobileDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+          </div>
 
           {/* Mobile Dropdown Menu */}
           {isMobileDropdownOpen && (
@@ -133,9 +145,11 @@ function PdfViewer() {
                       setIsMobileDropdownOpen(false);
                     }}
                     className={`w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition-all duration-200
-                      ${currentPdf === item.pdfUrl
-                        ? "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 shadow-md"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-blue-500/5 dark:hover:bg-blue-400/5"}`}
+                      ${
+                        currentPdf === item.pdfUrl
+                          ? "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 shadow-md"
+                          : "text-gray-700 dark:text-gray-300 hover:bg-blue-500/5 dark:hover:bg-blue-400/5"
+                      }`}
                   >
                     <span className="font-medium text-left w-full truncate">
                       {item.title}
@@ -170,9 +184,11 @@ function PdfViewer() {
                       key={item.id}
                       onClick={() => setCurrentPdf(item.pdfUrl)}
                       className={`w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition-all duration-200
-                        ${currentPdf === item.pdfUrl
-                          ? "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 shadow-md"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-blue-500/5 dark:hover:bg-blue-400/5"}`}
+                        ${
+                          currentPdf === item.pdfUrl
+                            ? "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 shadow-md"
+                            : "text-gray-700 dark:text-gray-300 hover:bg-blue-500/5 dark:hover:bg-blue-400/5"
+                        }`}
                     >
                       <span className="font-medium text-left w-full truncate">
                         {item.title}
@@ -195,12 +211,12 @@ function PdfViewer() {
                   title="PDF Viewer"
                 />
               )}
-              
+
               {/* Fullscreen Button */}
               <button
                 onClick={toggleFullscreen}
                 className="hidden md:block fixed top-16 right-6 p-2 rounded-lg bg-black/50 backdrop-blur-xl shadow-lg transition-all duration-200 text-white hover:bg-black/70 z-50"
-                >
+              >
                 {isFullscreen ? (
                   <HiArrowsPointingIn className="w-5 h-5" />
                 ) : (

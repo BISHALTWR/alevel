@@ -31,8 +31,8 @@ function Notes() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const filteredNotes = activeSubject
@@ -78,9 +78,9 @@ function Notes() {
   const handleNoteClick = (note) => {
     if (isMobile) {
       // Create a temporary link element
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = note.pdfUrl;
-      link.download = note.title + '.pdf';
+      link.download = note.title + ".pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -265,7 +265,7 @@ function Notes() {
                     </div>
 
                     {/* Mobile Search Input */}
-                    <div className="md:hidden w-full mt-4">
+                    <div className="md:hidden w-full">
                       <input
                         type="text"
                         placeholder="Search notes..."

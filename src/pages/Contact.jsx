@@ -12,29 +12,32 @@ function Contact() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState('idle');
+  const [status, setStatus] = useState("idle");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('loading');
-    
+    setStatus("loading");
+
     try {
       const form = e.target;
       const formData = new FormData(form);
-      
-      const response = await fetch("https://formsubmit.co/8db3a79c4af65af7772bf66a6ab7cadf", {
-        method: "POST",
-        body: formData
-      });
+
+      const response = await fetch(
+        "https://formsubmit.co/8db3a79c4af65af7772bf66a6ab7cadf",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus('error');
+        setStatus("error");
       }
     } catch (error) {
-      setStatus('error');
+      setStatus("error");
     }
   };
 
@@ -132,17 +135,20 @@ function Contact() {
 
           {/* Contact Form */}
           <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-sm p-8 border border-gray-200/50 dark:border-gray-700/50">
-            <form 
-              onSubmit={handleSubmit} 
-              className="space-y-6"
-              method="POST"
-            >
-              <input type="hidden" name="_subject" value="New message from A Level Website" />
+            <form onSubmit={handleSubmit} className="space-y-6" method="POST">
+              <input
+                type="hidden"
+                name="_subject"
+                value="New message from A Level Website"
+              />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              
+
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
                   Name
                 </label>
                 <input
@@ -157,7 +163,10 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
                   Email
                 </label>
                 <input
@@ -172,7 +181,10 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
                   Message
                 </label>
                 <textarea
@@ -188,19 +200,19 @@ function Contact() {
 
               <button
                 type="submit"
-                disabled={status === 'loading'}
-                className={`w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform-gpu hover:scale-[1.02] transition-all duration-300 ${status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={status === "loading"}
+                className={`w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform-gpu hover:scale-[1.02] transition-all duration-300 ${status === "loading" ? "opacity-50 cursor-not-allowed" : ""}`}
               >
-                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                {status === "loading" ? "Sending..." : "Send Message"}
               </button>
 
-              {status === 'success' && (
+              {status === "success" && (
                 <p className="text-green-600 dark:text-green-400 text-center">
                   Message sent successfully!
                 </p>
               )}
 
-              {status === 'error' && (
+              {status === "error" && (
                 <p className="text-red-600 dark:text-red-400 text-center">
                   Failed to send message. Please try again.
                 </p>

@@ -31,8 +31,8 @@ function Tests() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const filteredTests =
@@ -80,9 +80,9 @@ function Tests() {
   const handleTestClick = (test) => {
     if (isMobile) {
       // Create a temporary link element
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = test.pdfUrl;
-      link.download = test.title + '.pdf';
+      link.download = test.title + ".pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -221,50 +221,50 @@ function Tests() {
                     </div>
 
                     {/* Search - Desktop */}
-<div
-  ref={searchContainerRef}
-  className="hidden md:flex items-center relative"
->
-  <div
-    className={`absolute right-12 transition-all duration-300 ${
-      isSearchVisible
-        ? "w-48 opacity-100 visible"
-        : "w-0 opacity-0 invisible"
-    }`}
-  >
-    <input
-      ref={searchInputRef}
-      type="text"
-      placeholder="Search tests..."
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      className="w-full px-4 py-2 rounded-lg border border-green-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-green-400 dark:focus:border-green-500 focus:ring-2 focus:ring-green-400/20 dark:focus:ring-green-500/20 focus:outline-none"
-    />
-  </div>
+                    <div
+                      ref={searchContainerRef}
+                      className="hidden md:flex items-center relative"
+                    >
+                      <div
+                        className={`absolute right-12 transition-all duration-300 ${
+                          isSearchVisible
+                            ? "w-48 opacity-100 visible"
+                            : "w-0 opacity-0 invisible"
+                        }`}
+                      >
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          placeholder="Search tests..."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          className="w-full px-4 py-2 rounded-lg border border-green-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-green-400 dark:focus:border-green-500 focus:ring-2 focus:ring-green-400/20 dark:focus:ring-green-500/20 focus:outline-none"
+                        />
+                      </div>
 
-  <button
-    onClick={toggleSearch}
-    className={`p-2 rounded-lg transition-all duration-200 ml-3
+                      <button
+                        onClick={toggleSearch}
+                        className={`p-2 rounded-lg transition-all duration-200 ml-3
       ${
         isSearchVisible
           ? "bg-green-500/10 dark:bg-green-400/10 text-green-600 dark:text-green-400"
           : "text-gray-700 dark:text-gray-300 hover:bg-green-500/5 dark:hover:bg-green-400/5"
       }`}
-  >
-    <HiMagnifyingGlass className="w-5 h-5" />
-  </button>
-</div>
+                      >
+                        <HiMagnifyingGlass className="w-5 h-5" />
+                      </button>
+                    </div>
 
-{/* Mobile Search Input */}
-<div className="md:hidden w-full mt-4">
-  <input
-    type="text"
-    placeholder="Search tests..."
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-    className="w-full px-4 py-2 rounded-lg border border-green-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-green-400 dark:focus:border-green-500 focus:ring-2 focus:ring-green-400/20 dark:focus:ring-green-500/20 focus:outline-none"
-  />
-</div>
+                    {/* Mobile Search Input */}
+                    <div className="md:hidden w-full">
+                      <input
+                        type="text"
+                        placeholder="Search tests..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full px-4 py-2 rounded-lg border border-green-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-green-400 dark:focus:border-green-500 focus:ring-2 focus:ring-green-400/20 dark:focus:ring-green-500/20 focus:outline-none"
+                      />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
