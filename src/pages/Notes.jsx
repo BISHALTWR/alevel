@@ -23,6 +23,17 @@ function Notes() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // Handle mobile detection
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const filteredNotes = activeSubject
     ? notesList[activeSubject].notes.filter(
@@ -61,6 +72,26 @@ function Notes() {
       setTimeout(() => {
         searchInputRef.current?.focus();
       }, 100);
+    }
+  };
+
+  const handleNoteClick = (note) => {
+    if (isMobile) {
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = note.pdfUrl;
+      link.download = note.title + '.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      navigate("/pdf-viewer", {
+        state: {
+          pdfUrl: note.pdfUrl,
+          type: "notes",
+          subject: activeSubject,
+        },
+      });
     }
   };
 
@@ -200,65 +231,56 @@ function Notes() {
 
                     {/* Search on right */}
                     <div
-  ref={searchContainerRef}
-  className="hidden md:flex items-center relative"
->
-  <div
-    className={`absolute right-12 transition-all duration-300 ${
-      isSearchVisible
-        ? "w-48 opacity-100 visible"
-        : "w-0 opacity-0 invisible"
-    }`}
-  >
-    <input
-      ref={searchInputRef}
-      type="text"
-      placeholder="Search notes..."
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      className="w-full px-4 py-2 rounded-lg border border-blue-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-400/20 dark:focus:ring-blue-500/20 focus:outline-none"
-    />
-  </div>
+                      ref={searchContainerRef}
+                      className="hidden md:flex items-center relative"
+                    >
+                      <div
+                        className={`absolute right-12 transition-all duration-300 ${
+                          isSearchVisible
+                            ? "w-48 opacity-100 visible"
+                            : "w-0 opacity-0 invisible"
+                        }`}
+                      >
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          placeholder="Search notes..."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          className="w-full px-4 py-2 rounded-lg border border-blue-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-400/20 dark:focus:ring-blue-500/20 focus:outline-none"
+                        />
+                      </div>
 
-  <button
-    onClick={toggleSearch}
-    className={`p-2 rounded-lg transition-all duration-200 ml-3
-      ${
-        isSearchVisible
-          ? "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400"
-          : "text-gray-700 dark:text-gray-300 hover:bg-blue-500/5 dark:hover:bg-blue-400/5"
-      }`}
-  >
-    <HiMagnifyingGlass className="w-5 h-5" />
-  </button>
-</div>
+                      <button
+                        onClick={toggleSearch}
+                        className={`p-2 rounded-lg transition-all duration-200 ml-3
+                          ${
+                            isSearchVisible
+                              ? "bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400"
+                              : "text-gray-700 dark:text-gray-300 hover:bg-blue-500/5 dark:hover:bg-blue-400/5"
+                          }`}
+                      >
+                        <HiMagnifyingGlass className="w-5 h-5" />
+                      </button>
+                    </div>
 
-{/* Mobile Search Input */}
-<div className="md:hidden w-full mt-4">
-  <input
-    type="text"
-    placeholder="Search notes..."
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-    className="w-full px-4 py-2 rounded-lg border border-blue-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-400/20 dark:focus:ring-blue-500/20 focus:outline-none"
-  />
-</div>
-
+                    {/* Mobile Search Input */}
+                    <div className="md:hidden w-full mt-4">
+                      <input
+                        type="text"
+                        placeholder="Search notes..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full px-4 py-2 rounded-lg border border-blue-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl text-gray-700 dark:text-gray-300 focus:border-blue-400 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-400/20 dark:focus:ring-blue-500/20 focus:outline-none"
+                      />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredNotes.map((note) => (
                       <div
                         key={note.id}
-                        onClick={() =>
-                          navigate("/pdf-viewer", {
-                            state: {
-                              pdfUrl: note.pdfUrl,
-                              type: "notes",
-                              subject: activeSubject,
-                            },
-                          })
-                        }
+                        onClick={() => handleNoteClick(note)}
                         className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-blue-100 dark:border-gray-700 hover:bg-white/80 dark:hover:bg-gray-800/80 cursor-pointer transition-all duration-200 transform hover:scale-105"
                       >
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">

@@ -23,6 +23,17 @@ function Tests() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // Handle mobile detection
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const filteredTests =
     activeSubject && testsList[activeSubject]?.tests
@@ -65,6 +76,27 @@ function Tests() {
       }, 100);
     }
   };
+
+  const handleTestClick = (test) => {
+    if (isMobile) {
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = test.pdfUrl;
+      link.download = test.title + '.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      navigate("/pdf-viewer", {
+        state: {
+          pdfUrl: test.pdfUrl,
+          type: "tests",
+          subject: activeSubject,
+        },
+      });
+    }
+  };
+
   return (
     <div className="h-screen bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       {/* Background Circle */}
@@ -239,15 +271,7 @@ function Tests() {
                     {filteredTests.map((test) => (
                       <div
                         key={test.id}
-                        onClick={() =>
-                          navigate("/pdf-viewer", {
-                            state: {
-                              pdfUrl: test.pdfUrl,
-                              type: "tests",
-                              subject: activeSubject,
-                            },
-                          })
-                        }
+                        onClick={() => handleTestClick(test)}
                         className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-green-100 dark:border-gray-700 hover:bg-white/80 dark:hover:bg-gray-800/80 cursor-pointer transition-all duration-200 transform hover:scale-105"
                       >
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
