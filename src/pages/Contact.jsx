@@ -1,10 +1,10 @@
+import { useState } from "react";
 import {
   HiOutlineMail,
   HiOutlinePhone,
   HiOutlineLocationMarker,
   HiOutlineGlobe,
 } from "react-icons/hi";
-import { useState } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -12,8 +12,6 @@ function Contact() {
     email: "",
     message: "",
   });
-  
-  // Add status state
   const [status, setStatus] = useState('idle');
 
   const handleSubmit = async (e) => {
@@ -21,18 +19,12 @@ function Contact() {
     setStatus('loading');
     
     try {
-      const response = await fetch('https://formsubmit.co/8db3a79c4af65af7772bf66a6ab7cadf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: "New message from A Level Website",
-        }),
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      const response = await fetch("https://formsubmit.co/8db3a79c4af65af7772bf66a6ab7cadf", {
+        method: "POST",
+        body: formData
       });
 
       if (response.ok) {
@@ -49,7 +41,7 @@ function Contact() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.id]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -138,85 +130,78 @@ function Contact() {
             </div>
           </div>
 
-                    {/* Contact Form */}
-                    <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-sm p-8 border border-gray-200/50 dark:border-gray-700/50">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Contact Form */}
+          <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-sm p-8 border border-gray-200/50 dark:border-gray-700/50">
+            <form 
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New message from A Level Website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 
-                           bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-white
-                           focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none"
+                  className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Email
                 </label>
                 <input
                   type="email"
+                  name="email"
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 
-                           bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-white
-                           focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none"
+                  className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Message
                 </label>
                 <textarea
+                  name="message"
                   id="message"
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 
-                           bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-white
-                           focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none resize-none"
+                  className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className={`w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 
-                         hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg
-                         shadow-lg hover:shadow-xl transform-gpu hover:scale-[1.02] 
-                         transition-all duration-300 ${status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform-gpu hover:scale-[1.02] transition-all duration-300 ${status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
 
               {status === 'success' && (
-                <p className="mt-4 text-green-600 dark:text-green-400 text-center">
+                <p className="text-green-600 dark:text-green-400 text-center">
                   Message sent successfully!
                 </p>
               )}
 
               {status === 'error' && (
-                <p className="mt-4 text-red-600 dark:text-red-400 text-center">
+                <p className="text-red-600 dark:text-red-400 text-center">
                   Failed to send message. Please try again.
                 </p>
               )}
@@ -227,6 +212,5 @@ function Contact() {
     </div>
   );
 }
-
 
 export default Contact;
