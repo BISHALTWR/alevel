@@ -12,21 +12,7 @@ import "./styles/App.css";
 function App() {
   return (
     <ThemeProvider>
-      {/* Minimum Width Warning Overlay */}
-      <div className="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-[9999] xs:hidden">
-        <div className="text-center px-6">
-          <HiOutlineDevicePhoneMobile className="w-16 h-16 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            Screen Too Small
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            Please use a device with a larger screen (min-width: 480px).
-          </p>
-        </div>
-      </div>
-
-      {/* Main App Content */}
-      <div className="hidden xs:block">
+      <div>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

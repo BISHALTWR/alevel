@@ -21,7 +21,7 @@ function Contact() {
     setStatus('loading');
     
     try {
-      const response = await fetch('https://formsubmit.co/bishaltwr@gmail.com', {
+      const response = await fetch('https://formsubmit.co/8db3a79c4af65af7772bf66a6ab7cadf', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
