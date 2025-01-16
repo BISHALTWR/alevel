@@ -56,15 +56,15 @@ function Home() {
       {/* Hero Section with Circle Background */}
       <div className="relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="w-[800px] h-[800px] rounded-full bg-blue-500/5 dark:bg-blue-400/5 blur-3xl" />
+          <div className="w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] rounded-full bg-blue-500/5 dark:bg-blue-400/5 blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
           <div className="text-center space-y-8">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-600">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-600">
               A Level Notes
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Let's do this!!
             </p>
           </div>
@@ -78,7 +78,7 @@ function Home() {
             <button
               key={i}
               onClick={() => navigate(item.path)}
-              className="group relative rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300"
+              className="group relative rounded-2xl p-6 sm:p-8 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Default Background */}
               <div
@@ -101,7 +101,7 @@ function Home() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                     {item.title}
                   </h2>
                   <p className="mt-2 text-gray-600 dark:text-gray-400">

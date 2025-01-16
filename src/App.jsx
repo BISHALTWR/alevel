@@ -6,7 +6,6 @@ import Notes from "./pages/Notes";
 import Tests from "./pages/Tests";
 import Contact from "./pages/Contact";
 import PdfViewer from "./pages/PdfViewer";
-import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import "./styles/App.css";
 
 function App() {
