@@ -53,14 +53,14 @@
       },
       {
         "id": "paper3",
-        "title": "Paper 3 Overall Test 1",
+        "title": "Pure Mathematics 3",
         "pdfUrl": "/alevel/tests/computer/Paper 3 Overall Test 1.pdf",
         "description": "Complete Paper 3 practice test",
         "component": "A2"
       },
       {
         "id": "programming-1",
-        "title": "Programming Fundamentals Test 1",
+        "title": "Programming Fundamentals",
         "pdfUrl": "/alevel/tests/computer/Programming Fundamentals Test 1.pdf",
         "description": "Basic programming concepts test",
         "component": "AS"
@@ -69,7 +69,7 @@
         "id": "programming-2",
         "title": "Programming Fundamentals Test 2",
         "pdfUrl": "/alevel/tests/computer/Programming Fundamentals Test 2.pdf",
-        "description": "Advanced programming concepts test",
+        "description": "Programming fundamentals",
         "component": "AS"
       },
       {
@@ -81,14 +81,14 @@
       },
       {
         "id": "recursion",
-        "title": "Recursion Test 1",
+        "title": "Recursion",
         "pdfUrl": "/alevel/tests/computer/Recursion Test 1.pdf",
-        "description": "Test on recursive algorithms",
+        "description": "Test on recursion",
         "component": "A2"
       },
       {
         "id": "searching-sorting",
-        "title": "Searching and Sorting Test 1",
+        "title": "Searching and Sorting",
         "pdfUrl": "/alevel/tests/computer/Searching and Sorting Test 1.pdf",
         "description": "Test on searching and sorting algorithms",
         "component": "A2"
@@ -106,7 +106,40 @@
         "pdfUrl": "/alevel/tests/computer/User defined data types Test 1.pdf",
         "description": "Test on Enumerate and Record data types",
         "component": "A2"
+      },{
+        "id": "information_representation_complete",
+        "title": "Information Representation",
+        "pdfUrl": "/alevel/tests/computer/Information_Representation.pdf",
+        "description": "AS and A2 Information and Data representation",
+        "component": "Combined"
+      },{
+        "id": "logic-circuits-complete",
+        "title": "Logic Circuits",
+        "pdfUrl": "/alevel/tests/computer/Logic circuits.pdf",
+        "description": "AS and A2 (Kmap, Logic Circuit, Boolean expression, Truth table)",
+        "component": "Combined"
+      },
+      {
+        "id": "python-introduction",
+        "title": "Python Introduction",
+        "pdfUrl": "/alevel/tests/computer/Python_Introduction.pdf",
+        "description": "Iteration, Function and Conditional",
+        "component": "A2"
+      },
+      {
+        "id": "paper1-number-representation",
+        "title": "Number Representation",
+        "pdfUrl": "/alevel/tests/computer/Paper 1 Number Representation.pdf",
+        "description": "Test on number representation (Binary, BCD, Hexadecimal)",
+        "component": "AS"
+      },{
+        "id": "paper4",
+        "title": "Paper 4",
+        "pdfUrl": "/alevel/tests/computer/Paper 4.pdf",
+        "description": "Complete Paper 4 practice test",
+        "component": "A2"
       }
+      
     ]
   },
   "mathematics": {
@@ -114,16 +147,16 @@
     "tests": [
       {
         "id": "complex-1",
-        "title": "Complex Numbers Test 1",
+        "title": "Complex Numbers",
         "pdfUrl": "/alevel/tests/mathematics/Complex Numbers Test 1.pdf",
-        "description": "Complex numbers test",
+        "description": "Complex numbers test 1",
         "component": "A2"
       },
       {
         "id": "complex-2",
-        "title": "Complex Numbers Test 2",
+        "title": "Complex Numbers",
         "pdfUrl": "/alevel/tests/mathematics/Complex Numbers Test 2.pdf",
-        "description": "Complex numbers test",
+        "description": "Complex numbers test 2",
         "component": "A2"
       },
       {
@@ -166,6 +199,19 @@
         "title": "Integration (Partial Fraction)",
         "pdfUrl": "/alevel/tests/mathematics/Integration Partial Fraction Test 1.pdf",
         "description": "Test on partial fraction integration",
+        "component": "A2"
+      },
+      {
+        "id": "poisson",
+        "title": "Poisson Distribution",
+        "pdfUrl": "/alevel/tests/mathematics/Poisson.pdf",
+        "description": "Test on Poisson distribution",
+        "component": "A2"
+      },{
+        "id": "statistics-2",
+        "title": "Statistics 2 Workbook",
+        "pdfUrl": "/alevel/tests/mathematics/Statistics 2 Workbook.pdf",
+        "description": "Complete Workbook for Statistics 2",
         "component": "A2"
       }
     ]

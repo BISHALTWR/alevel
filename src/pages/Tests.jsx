@@ -204,7 +204,7 @@ function Tests() {
                 <>
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex gap-3">
-                      {["all", "AS", "A2"].map((component) => (
+                      {["all", "AS", "A2", "Combined"].map((component) => (
                         <button
                           key={component}
                           onClick={() => setActiveComponent(component)}
