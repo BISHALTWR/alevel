@@ -160,13 +160,6 @@
         "component": "A2"
       },
       {
-        "id": "probability",
-        "title": "CRV and Poisson Distribution",
-        "pdfUrl": "/alevel/tests/mathematics/CRV and Poisson Disribution.pdf",
-        "description": "Continuous random variables and Poisson distribution",
-        "component": "A2"
-      },
-      {
         "id": "differential",
         "title": "Differential Equation",
         "pdfUrl": "/alevel/tests/mathematics/Differential Equation Test 1.pdf",
@@ -200,19 +193,6 @@
         "pdfUrl": "/alevel/tests/mathematics/Integration Partial Fraction Test 1.pdf",
         "description": "Test on partial fraction integration",
         "component": "A2"
-      },
-      {
-        "id": "poisson",
-        "title": "Poisson Distribution",
-        "pdfUrl": "/alevel/tests/mathematics/Poisson.pdf",
-        "description": "Test on Poisson distribution",
-        "component": "A2"
-      },{
-        "id": "statistics-2",
-        "title": "Statistics 2 Workbook",
-        "pdfUrl": "/alevel/tests/mathematics/Statistics 2 Workbook.pdf",
-        "description": "Complete Workbook for Statistics 2",
-        "component": "A2"
       }
     ]
   },
@@ -241,5 +221,38 @@
         "component": "AS"
       }
     ]
+  },
+  
+  "probability": {
+  "subject": "Probability and Statistics",
+  "tests": [
+  {
+       "id": "stat_full-1",
+        "title": "Statistics 2 Full Test",
+        "pdfUrl": "/alevel/tests/probability/Stat2FullTest.pdf",
+        "description": "Full Test for Statistics 2",
+        "component": "A2"
+      },{
+        "id": "statistics-2",
+        "title": "Statistics 2 Workbook",
+        "pdfUrl": "/alevel/tests/probability/Statistics 2 Workbook.pdf",
+        "description": "Complete Workbook for Statistics 2",
+        "component": "A2"
+      },
+      {
+        "id": "poisson",
+        "title": "Poisson Distribution",
+        "pdfUrl": "/alevel/tests/probability/PoissonLongTest1.pdf",
+        "description": "Test on Poisson distribution",
+        "component": "A2"
+      },
+      {
+        "id": "probability",
+        "title": "CRV and Poisson Distribution",
+        "pdfUrl": "/alevel/tests/probability/CRV and Poisson Disribution.pdf",
+        "description": "Continuous random variables and Poisson distribution",
+        "component": "A2"
+      }
+  ]
   }
 }
