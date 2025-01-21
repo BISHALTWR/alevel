@@ -1,0 +1,20 @@
+.
+├── BinomialDistributionRecap.pdf
+├── content.txt
+├── CRV and Poisson Disribution.pdf
+├── CRVRecap1.pdf
+├── CRVRecap2.pdf
+├── DataRepresentationRecap.pdf
+├── DiscreteDistributionRecap.pdf
+├── NormalDistributionRecap.pdf
+├── PermutationRecap1.pdf
+├── PermutationRecap2.pdf
+├── PoissonLongTest1.pdf
+├── PoissonRecap1.pdf
+├── ProbabilityRecap1.pdf
+├── SamplingAndEstimationRecap1.pdf
+├── SamplingAndEstimationRecap2.pdf
+├── Stat2FullTest.pdf
+└── Statistics 2 Workbook.pdf
+
+0 directories, 17 files
