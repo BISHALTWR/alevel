@@ -165,7 +165,7 @@ function PdfViewer() {
           {/* Desktop Sidebar */}
           {!isFullscreen && (
             <div className="hidden md:block w-80 h-screen bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
-              <div className="p-6">
+              <div className="p-6 pb-24">
                 <button
                   onClick={() => navigate(-1)}
                   className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white mb-6"

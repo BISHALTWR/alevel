@@ -252,6 +252,90 @@
         "pdfUrl": "/alevel/tests/probability/CRV and Poisson Disribution.pdf",
         "description": "Continuous random variables and Poisson distribution",
         "component": "A2"
+      },
+      {
+        "id": "binomial_distribution",
+        "title": "Binomial Distribution Recap",
+        "pdfUrl": "/alevel/tests/probability/BinomialDistributionRecap.pdf",
+        "description": "Past questions that almost cover every part of Binomial distribution",
+        "component": "AS"
+      },
+      {
+        "id": "crv_recap_1",
+        "title": "CRV Recap 1",
+        "pdfUrl": "/alevel/tests/probability/CRVRecap1.pdf",
+        "description": "Recap on continuous random variables",
+        "component": "A2"
+      },
+      {
+        "id": "crv_recap_2",
+        "title": "CRV Recap 2",
+        "pdfUrl": "/alevel/tests/probability/CRVRecap2.pdf",
+        "description": "Further recap on continuous random variables",
+        "component": "A2"
+      },
+      {
+        "id": "data_representation_recap",
+        "title": "Data Representation Recap",
+        "pdfUrl": "/alevel/tests/probability/DataRepresentationRecap.pdf",
+        "description": "Recap on data representation",
+        "component": "AS"
+      },
+      {
+        "id": "discrete_distribution_recap",
+        "title": "Discrete Distribution Recap",
+        "pdfUrl": "/alevel/tests/probability/DiscreteDistributionRecap.pdf",
+        "description": "Recap on discrete distributions",
+        "component": "AS"
+      },
+      {
+        "id": "normal_distribution_recap",
+        "title": "Normal Distribution Recap",
+        "pdfUrl": "/alevel/tests/probability/NormalDistributionRecap.pdf",
+        "description": "Recap on normal distribution",
+        "component": "A2"
+      },
+      {
+        "id": "permutation_recap_1",
+        "title": "Permutation Recap 1",
+        "pdfUrl": "/alevel/tests/probability/PermutationRecap1.pdf",
+        "description": "Recap on permutations",
+        "component": "AS"
+      },
+      {
+        "id": "permutation_recap_2",
+        "title": "Permutation Recap 2",
+        "pdfUrl": "/alevel/tests/probability/PermutationRecap2.pdf",
+        "description": "Further recap on permutations",
+        "component": "AS"
+      },
+      {
+        "id": "poisson_recap_1",
+        "title": "Poisson Recap 1",
+        "pdfUrl": "/alevel/tests/probability/PoissonRecap1.pdf",
+        "description": "Recap on Poisson distribution",
+        "component": "A2"
+      },
+      {
+        "id": "probability_recap_1",
+        "title": "Probability Recap 1",
+        "pdfUrl": "/alevel/tests/probability/ProbabilityRecap1.pdf",
+        "description": "Recap on probability concepts",
+        "component": "AS"
+      },
+      {
+        "id": "sampling_estimation_recap_1",
+        "title": "Sampling and Estimation Recap 1",
+        "pdfUrl": "/alevel/tests/probability/SamplingAndEstimationRecap1.pdf",
+        "description": "Recap on sampling and estimation",
+        "component": "A2"
+      },
+      {
+        "id": "sampling_estimation_recap_2",
+        "title": "Sampling and Estimation Recap 2",
+        "pdfUrl": "/alevel/tests/probability/SamplingAndEstimationRecap2.pdf",
+        "description": "Further recap on sampling and estimation",
+        "component": "A2"
       }
   ]
   }
