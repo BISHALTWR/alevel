@@ -138,6 +138,12 @@
         "pdfUrl": "/alevel/tests/computer/Paper 4.pdf",
         "description": "Complete Paper 4 practice test",
         "component": "A2"
+      },{
+        "id": "Paper 2 full1",
+        "title": "Paper 2 Full length test",
+        "pdfUrl": "/alevel/tests/computer/Paper2FullTest.pdf",
+        "description": "AS P2 Complete Test",
+        "component": "AS"
       }
       
     ]
