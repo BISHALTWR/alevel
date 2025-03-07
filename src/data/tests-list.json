@@ -10,6 +10,14 @@
         "component": "A2"
       },
       {
+        "id": "P2Diagrams",
+        "title": "Diagram Questions P2",
+        "pdfUrl": "/alevel/tests/computer/DiagramQuestionsP2PastPapers.pdf",
+        "description": "Past questions of Structure Chart, Flowchart and State-Transition diagrams",
+        "component": "AS"
+
+      }
+      {
         "id": "floating-point",
         "title": "Floating Point Representation Test 1",
         "pdfUrl": "/alevel/tests/computer/Floating Point Representation Test 1.pdf",
@@ -284,7 +292,7 @@
         "id": "data_representation_recap",
         "title": "Data Representation Recap",
         "pdfUrl": "/alevel/tests/probability/DataRepresentationRecap.pdf",
-        "description": "Recap on data representation",
+        "description": "Recap Test on data representation",
         "component": "AS"
       },
       {
@@ -312,7 +320,7 @@
         "id": "permutation_recap_2",
         "title": "Permutation Recap 2",
         "pdfUrl": "/alevel/tests/probability/PermutationRecap2.pdf",
-        "description": "Further recap on permutations",
+        "description": "More recap on permutations",
         "component": "AS"
       },
       {
