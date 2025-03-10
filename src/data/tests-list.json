@@ -19,15 +19,22 @@
       {
         "id": "P2ADT",
         "title": "ADT Questions P2",
-        "pdfUrl": "/alevel/tests/Paper2ADT.pdf",
+        "pdfUrl": "/alevel/tests/computer/Paper2ADT.pdf",
         "description": "Past questions of ADT from paper 3",
         "component": "AS"
       },
       {
         "id": "P3ADT",
         "title": "ADT Questions P3",
-        "pdfUrl": "/alevel/tests/Paper3ADT.pdf",
+        "pdfUrl": "/alevel/tests/computer/Paper3ADT.pdf",
         "description": "Past questions of ADT from paper 3",
+        "component": "A2"
+      },
+      {
+        "id": "P4ADT",
+        "title": "ADT Questions P4",
+        "pdfUrl": "/alevel/tests/computer/Paper4ADT.pdf",
+        "description": "Past questions of ADT from paper 4",
         "component": "A2"
       },
       {
